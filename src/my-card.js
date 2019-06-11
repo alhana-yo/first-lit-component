@@ -11,6 +11,11 @@ class MyCard extends LitElement {
         --card-margin: 1.5rem 0.7rem;
         --card-padding: 1.5rem 0;
         --card-title-padding-bottom: 0.75rem;
+        --card-title-size: 24px;
+        --card-title-color: #212121;
+        --card-description-size: 16px;
+        --card-description-color: #575756;
+        font-family: "Open Sans", sans-serif;
         display: block;
       }
       .directory__wrapper--card {
@@ -45,13 +50,14 @@ class MyCard extends LitElement {
       }
 
       .card__title {
-        color: #212121;
+        color: var(--card-title-color);
         padding-bottom: var(--card-title-padding-bottom);
-        font-size: 24px;
+        font-size: var(--card-title-size);
       }
 
       .card__description {
-        color: #575756;
+        font-size: var(--card-description-size);
+        color: var(--card-description-color);
       }
     `;
   }
