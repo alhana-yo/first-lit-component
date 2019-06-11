@@ -4,17 +4,22 @@ class MyCard extends LitElement {
   static get styles() {
     return css`
       :host {
+        --card-width: 210px;
+        --card-height: 16rem;
         --card-background-color: #ffffff;
+        --card-border: #ff7900 solid 5px;
+        --card-margin: 1.5rem 0.7rem;
+        --card-padding: 1.5rem 0;
+        --card-title-padding-bottom: 0.75rem;
         display: block;
       }
       .directory__wrapper--card {
-        width: 210px;
-        height: 16rem;
-        border: #ff7900 solid 5px;
-        //background-color: #ffffff;
+        width: var(--card-width);
+        height: var(--card-height);
+        border: var(--card-border);
         background-color: var(--card-background-color);
-        margin: 1.5rem 0.7rem;
-        padding: 1.5rem 0;
+        margin: var(--card-margin);
+        padding: var(--card-padding);
         text-align: center;
         border-radius: 1rem;
       }
@@ -41,7 +46,7 @@ class MyCard extends LitElement {
 
       .card__title {
         color: #212121;
-        padding-bottom: 0.75rem;
+        padding-bottom: var(--card-title-padding-bottom);
         font-size: 24px;
       }
 
@@ -54,7 +59,8 @@ class MyCard extends LitElement {
   static get properties() {
     return {
       title: { type: String },
-      description: { type: String }
+      description: { type: String },
+      icon: { type: String }
     };
   }
 
@@ -69,7 +75,7 @@ class MyCard extends LitElement {
         >
           <div class="card__wrapper">
             <div class="card__icon">
-              <i class="fab fa-slack"></i>
+              <i class="${this.icon}"></i>
             </div>
             <h3 class="card__title">
               ${this.title}
