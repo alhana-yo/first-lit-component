@@ -3,6 +3,11 @@ import { LitElement, html, css } from "lit-element";
 class MyCard extends LitElement {
   static get styles() {
     return css`
+      @font-face {
+        font-family: "Open Sans", sans-serif;
+        src: (https://fonts.googleapis.com/css?family=Open+Sans&display=swap);
+      }
+
       :host {
         --card-width: 210px;
         --card-height: 16rem;
