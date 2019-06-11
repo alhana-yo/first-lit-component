@@ -5,14 +5,12 @@ class MyCard extends LitElement {
     return css`
       :host {
         --card-background-color: #ffffff;
-        --card-border: #ff7900 solid 5px;
         display: block;
       }
       .directory__wrapper--card {
         width: 210px;
         height: 16rem;
-        //border: #ff7900 solid 5px;
-        border: --card-border;
+        border: #ff7900 solid 5px;
         //background-color: #ffffff;
         background-color: var(--card-background-color);
         margin: 1.5rem 0.7rem;
