@@ -53,6 +53,13 @@ class MyCard extends LitElement {
     `;
   }
 
+  static get properties() {
+    return {
+      title: { type: String },
+      description: { type: String }
+    };
+  }
+
   render() {
     return html`
       <article class="directory__wrapper--card">
@@ -67,10 +74,10 @@ class MyCard extends LitElement {
               <i class="fab fa-slack"></i>
             </div>
             <h3 class="card__title">
-              Grupos de Slack
+              ${this.title}
             </h3>
             <p class="card__description">
-              Grupos para developers
+              ${this.description}
             </p>
           </div>
         </a>
