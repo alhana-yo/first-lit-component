@@ -67,6 +67,7 @@ class MyCard extends LitElement {
     return {
       title: { type: String },
       description: { type: String },
+      url: { type: String },
       icon: { type: String }
     };
   }
@@ -81,7 +82,12 @@ class MyCard extends LitElement {
   render() {
     return html`
       <article class="directory__wrapper--card">
-        <a class="main__directory--link" target="blank" href=" slack.html">
+        <a
+          class="main__directory--link"
+          target="blank"
+          @click=${() => prompt("Enlace pulsado")}
+          href="${this.url}"
+        >
           <div class="card__wrapper">
             <div class="card__icon">
               <fa-icon
