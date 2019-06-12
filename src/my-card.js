@@ -70,6 +70,13 @@ class MyCard extends LitElement {
     };
   }
 
+  constructor() {
+    super();
+    this.title = "Titulo de la tarjeta";
+    this.description = "Descripción de la tarjeta";
+    // this.icon = "fas fa-cat";
+  }
+
   render() {
     return html`
       <link
