@@ -1,4 +1,5 @@
 import { LitElement, html, css } from "lit-element";
+import "fa-icons";
 
 class MyCard extends LitElement {
   static get styles() {
@@ -43,11 +44,11 @@ class MyCard extends LitElement {
         justify-content: center;
       }
 
-      .card__icon {
-        font-size: 5.5rem;
-        padding: 0 0 1rem;
-        color: #ff7900;
-      }
+      // .card__icon {
+      //   font-size: 5.5rem;
+      //   padding: 0 0 1rem;
+      //   color: #ff7900;
+      // }
 
       .card__title {
         color: var(--card-title-color);
@@ -74,22 +75,20 @@ class MyCard extends LitElement {
     super();
     this.title = "Titulo de la tarjeta";
     this.description = "Descripción de la tarjeta";
-    // this.icon = "fas fa-cat";
+    this.icon = "fas fa-cat";
   }
 
   render() {
     return html`
-      <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-        crossorigin="anonymous"
-      />
       <article class="directory__wrapper--card">
         <a class="main__directory--link" target="blank" href=" slack.html">
           <div class="card__wrapper">
             <div class="card__icon">
-              <i class="${this.icon}"></i>
+              <fa-icon
+                class="${this.icon}"
+                color="#ff7900"
+                size="5.5rem"
+              ></fa-icon>
             </div>
             <h3 class="card__title">
               ${this.title}
