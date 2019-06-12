@@ -23,7 +23,7 @@ class MyCard extends LitElement {
         height: var(--card-height);
         border: var(--card-border);
         background-color: var(--card-background-color);
-        margin: var(--card-margin);
+        margin: var(--card-margin, 1.5rem 0.7rem);
         padding: var(--card-padding);
         text-align: center;
         border-radius: 1rem;
@@ -72,13 +72,14 @@ class MyCard extends LitElement {
 
   render() {
     return html`
+      <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous"
+      />
       <article class="directory__wrapper--card">
-        <a
-          class="main__directory--link"
-          target="blank"
-          href=" slack.html
-        "
-        >
+        <a class="main__directory--link" target="blank" href=" slack.html">
           <div class="card__wrapper">
             <div class="card__icon">
               <i class="${this.icon}"></i>
