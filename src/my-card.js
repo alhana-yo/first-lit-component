@@ -68,7 +68,8 @@ class MyCard extends LitElement {
       title: { type: String },
       description: { type: String },
       url: { type: String },
-      icon: { type: String }
+      icon: { type: String },
+      category: { type: String }
     };
   }
 
@@ -77,33 +78,36 @@ class MyCard extends LitElement {
     this.title = "Titulo de la tarjeta";
     this.description = "Descripción de la tarjeta";
     this.icon = "fas fa-cat";
+    this.category = "";
+    setTimeout(() => {
+      const myEvent = new CustomEvent("gato-fired", {
+        detail: "Pichi dice"
+      });
+      this.dispatchEvent(myEvent);
+    }, 1000);
   }
 
   render() {
     return html`
       <article class="directory__wrapper--card">
-        <a
-          class="main__directory--link"
-          target="blank"
-          @click=${() => prompt("Enlace pulsado")}
-          href="${this.url}"
-        >
-          <div class="card__wrapper">
-            <div class="card__icon">
-              <fa-icon
-                class="${this.icon}"
-                color="#ff7900"
-                size="5.5rem"
-              ></fa-icon>
-            </div>
-            <h3 class="card__title">
-              ${this.title}
-            </h3>
-            <p class="card__description">
-              ${this.description}
-            </p>
+        <!-- <a class="main__directory--link" target="blank" href="${this
+          .url}"> -->
+        <div class="card__wrapper">
+          <div class="card__icon">
+            <fa-icon
+              class="${this.icon}"
+              color="#ff7900"
+              size="5.5rem"
+            ></fa-icon>
           </div>
-        </a>
+          <h3 class="card__title">
+            ${this.title}
+          </h3>
+          <p class="card__description">
+            ${this.description}
+          </p>
+        </div>
+        <!-- </a> -->
       </article>
     `;
   }
